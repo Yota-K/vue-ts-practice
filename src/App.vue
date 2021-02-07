@@ -2,7 +2,8 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <MyButton :greet="HelloHello" />
+    <h2>{{ greetText }}</h2>
+    <MyButton :greet="greetText" @click="onMyButtonClicked" />
   </div>
 </template>
 
@@ -18,7 +19,11 @@ import MyButton from "@/components/MyButton.vue";
   }
 })
 export default class Home extends Vue {
-  public HelloHello = "空白とかびっくりは無理";
+  public greetText = "初期データ";
+
+  public onMyButtonClicked() {
+    this.greetText = "こんにちは";
+  }
 }
 </script>
 
