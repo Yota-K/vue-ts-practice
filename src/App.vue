@@ -2,7 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-    <MyButton />
+    <MyButton :greet="HelloHello" />
   </div>
 </template>
 
@@ -17,7 +17,9 @@ import MyButton from "@/components/MyButton.vue";
     MyButton
   }
 })
-export default class Home extends Vue {}
+export default class Home extends Vue {
+  public HelloHello = "空白とかびっくりは無理";
+}
 </script>
 
 <style>
